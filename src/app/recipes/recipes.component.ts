@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+
+import { RecipeService } from './recipe.service';
+
+@Component({
+  selector: 'app-recipes',
+  templateUrl: './recipes.component.html',
+  styleUrls: ['./recipes.component.css'],
+  providers: [RecipeService]
+})
+export class RecipesComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  // My variant:
+  // Instructor variant directly assigns the value in the template.
+  /*onRecipeSelectedInList(recipeData: Recipe) {
+    this.selectedRecipe = recipeData;
+  }*/
+}

@@ -1,0 +1,28 @@
+<!--<div class="row">
+  <div class="col-xs-12">
+    <a href="#" class="list-group-item clearfix">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{  }}</h4>
+        <p class="list-group-item-text">Description</p>        
+      </div>
+      <span class="pull-right">
+        <img src="" alt="" class="img-responsive" style="max-height: 50px;">
+      </span>
+    </a>
+  </div>
+</div>-->
+
+<a class="list-group-item clearfix" style="cursor: pointer" [routerLink]="[index]" routerLinkActive="active">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ recipeData.name }}</h4>
+    <p class="list-group-item-text">{{ recipeData.description }}</p>        
+  </div>
+  <span class="pull-right">
+    <!-- Can use property binding [src]="item.imagePath" OR string interpolation. -->
+    <img 
+    src="{{ recipeData.imagePath }}"        
+    alt="{{ recipeData.name }}"
+    class="img-responsive"
+    style="max-height: 50px;">
+  </span>
+</a>
