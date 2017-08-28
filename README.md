@@ -2,6 +2,17 @@
 
 Experimenting with Angular 4 features based on the Udemy course by Maximilian Schwarzmüller (https://www.udemy.com/the-complete-guide-to-angular-2/learn/v4/overview).
 
+The project is a recipe book SPA that allows users to browse recipes and manage a shopping list. The project has a [Firebase](https://firebase.google.com/) backend which is used to allow users to create accounts and sign in with their credentials. Authenticated users can then edit recipes, plus save and fetch data from the Firebase endpoint.
+
+Among the Angular 4 features that this project exhibits are:
+- authentication & route protection;
+- HTTP request handling;
+- services & dependency injection;
+- routing;
+- observables;
+- forms (both template-driven and reactive);
+- directives, components & databinding.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
 ## Development server
