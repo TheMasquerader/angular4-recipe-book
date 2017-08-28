@@ -12,7 +12,7 @@ export class RecipeService {
     private recipes: Recipe[] = [
     new Recipe('Pancakes', 'Pancakes are good for you.',
      // tslint:disable-next-line:max-line-length
-     'http://assets.marthastewart.com/styles/video-preview-1280x720-highdpi/d31/easy_mothers_day_pancake_recipe/easy_mothers_day_pancake_recipe_horiz.jpg?itok=90ij5KGf',
+     '../../assets/pexels-photo-264727.jpeg', // tea-cake-cafe-desserts-162827.jpeg
 
     [
         new Ingredient('Flour', 1),
@@ -21,7 +21,7 @@ export class RecipeService {
 
      new Recipe('Waffles', 'Waffles are good for you.',
      // tslint:disable-next-line:max-line-length
-     'http://assets.marthastewart.com/styles/video-preview-1280x720-highdpi/d31/easy_mothers_day_pancake_recipe/easy_mothers_day_pancake_recipe_horiz.jpg?itok=90ij5KGf',
+     '../../assets/pexels-photo-227432.jpeg',
 
     [
         new Ingredient('Flour', 1),
@@ -31,6 +31,11 @@ export class RecipeService {
   ];
 
   constructor(private slService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
       // tslint:disable-next-line:max-line-length
