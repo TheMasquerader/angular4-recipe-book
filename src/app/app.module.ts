@@ -11,12 +11,6 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 // import { RecipesModule } from './recipes/recipes.module';
 
-import { AuthGuard } from './auth/auth-guard.service';
-import { AuthService } from './auth/auth.service';
-import { DataStorageService } from './shared/data-storage.service';
-import { RecipeService } from './recipes/recipe.service';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-
 @NgModule({
   // We define which components pipes or directives app uses.
   declarations: [
@@ -33,9 +27,6 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     SharedModule,
     CoreModule
   ],
-  // We're not including the RecipeService in the RecipesModule because it's used by various other components / services in the app,
-  // not just within the RecipesModule.
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
