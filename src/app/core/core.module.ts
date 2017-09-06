@@ -1,4 +1,7 @@
+import { LoggingInterceptor } from './../shared/logging.interceptor';
+import { AuthInterceptor } from './../shared/auth.interceptor';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,7 +35,14 @@ import { ShoppingListService } from './../shopping-list/shopping-list.service';
     // not just within the RecipesModule.
     // AuthGuard can be moved to the RecipesModule though, because it's only used there.
     providers: [
-        ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard
+        ShoppingListService,
+        RecipeService,
+        DataStorageService,
+        AuthService,
+        AuthGuard,
+        // The order in which we set the interceptors here is the order in which they get executed.
+        {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true}
     ]
 })
 export class CoreModule {}
